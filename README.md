@@ -1,4 +1,4 @@
-# ReactFlow Canvas — App Graph Builder
+# ReactFlow Canvas — App Graph Builder [DEMO](http://localhost:5173)
 
 A responsive "App Graph Builder" UI built with React, ReactFlow, TanStack Query, and Zustand.
 
@@ -12,7 +12,7 @@ A responsive "App Graph Builder" UI built with React, ReactFlow, TanStack Query,
 ### Install & Run
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/nikhilsaiankilla/reactflow-canvas
 cd reacflow-canvas
 npm install
 npm run dev

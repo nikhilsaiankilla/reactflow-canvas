@@ -4,7 +4,6 @@ import babel from "@rolldown/plugin-babel";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
@@ -13,7 +12,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "."),
+      // Fix: Point directly to src to match your tsconfig.app.json
+      "@": path.resolve(__dirname, "./src"),
     },
   },
 });
