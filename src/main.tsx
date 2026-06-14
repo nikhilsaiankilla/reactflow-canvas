@@ -8,10 +8,16 @@ import "@xyflow/react/dist/style.css";
 const queryClient = new QueryClient();
 
 async function prepare() {
-  if (import.meta.env.DEV) {
-    const { worker } = await import("./mocks/browser");
-    await worker.start({ onUnhandledRequest: "bypass" });
-  }
+  const { worker } = await import("./mocks/browser");
+
+  await worker.start({
+    onUnhandledRequest: "bypass",
+    serviceWorker: {
+      // Forcing the absolute root URL ensures Vercel handles
+      // the routing correctly on deep sub-pages
+      url: "/mockServiceWorker.js",
+    },
+  });
 }
 
 prepare().then(() => {
